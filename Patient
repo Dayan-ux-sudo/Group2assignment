@@ -1,0 +1,66 @@
+package com.example.hospitalmanagementsystem;
+
+public class Patient {
+
+    public Patient() {
+    }
+
+    private String firstname,secondname,lastname,Phonenumber,age,DateofAd;
+
+    public Patient(String firstname, String secondname, String lastname, String phonenumber, String age, String dateofAd) {
+        this.firstname = firstname;
+        this.secondname = secondname;
+        this.lastname = lastname;
+        Phonenumber = phonenumber;
+        this.age = age;
+        DateofAd = dateofAd;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getSecondname() {
+        return secondname;
+    }
+
+    public void setSecondname(String secondname) {
+        this.secondname = secondname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getPhonenumber() {
+        return Phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        Phonenumber = phonenumber;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getDateofAd() {
+        return DateofAd;
+    }
+
+    public void setDateofAd(String dateofAd) {
+        DateofAd = dateofAd;
+    }
+}
