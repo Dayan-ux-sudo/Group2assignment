@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E0D592"
+    tools:context=".Patientdetails">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EDF6E7"
+        tools:context=".Patientdetails">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7DC0E9"
+        tools:context=".Patientdetails">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/avatar1"
+            android:background="#E7E1E9"
+            android:id="@+id/hoslogo"
+            android:scaleType="centerInside"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Patient Details"
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:textSize="32dp"
+            android:padding="8dp"
+            android:textAlignment="textStart"
+            android:textStyle="bold"
+            android:textAppearance="@color/black"
+            android:background="#87A5F0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/patient" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/secondname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Second Name"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+            <EditText
+                android:id="@+id/Phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+            <EditText
+                android:id="@+id/DateofAd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date of Admisssion"
+                android:textSize="25sp"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+            <EditText
+                android:id="@+id/ward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ward No."
+                android:textSize="25sp"
+                android:padding="8dp"
+                android:textColor="@color/black" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gender"
+                android:hint="Gender"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="#101010" />
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Male"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/material_dynamic_neutral0" />
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Female"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:textColor="@color/material_dynamic_neutral0" />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="#D3D3CD"
+        android:id="@+id/main2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Patientdetails">
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_gravity="start"
+        android:hint="Submit"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:background="#979D97"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:layout_weight="1"
+        android:textColor="@color/black" />
+    <Button
+        android:id="@+id/close"
+        android:gravity="center"
+        android:layout_width="70dp"
+        android:layout_gravity="end"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:hint="Close"
+        android:background="#F63A3A"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
