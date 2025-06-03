@@ -1,0 +1,108 @@
+package com.example.hospitalmanagementsystem;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+public class Patientdetails extends AppCompatActivity {
+
+    EditText firstname,secondname,lastname,phonenumber,age,dateofAd,ward;
+    RadioGroup gender;
+    RadioButton male,female;
+    Button submit,close;
+    String strfirstname,strsecondname,strlastname,strphonenumber,stradmission,strward,strage;
+
+    String strgender;
+    Patient patient;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_patientdetails);
+
+        firstname=findViewById(R.id.firstname);
+        secondname=findViewById(R.id.secondname);
+        lastname=findViewById(R.id.lastname);
+        phonenumber=findViewById(R.id.Phonenumber);
+       age=findViewById(R.id.age);
+        dateofAd=findViewById(R.id.DateofAd);
+        ward=findViewById(R.id.ward);
+        gender=findViewById(R.id.gender);
+        male=findViewById(R.id.male);
+        female=findViewById(R.id.female);
+        submit=findViewById(R.id.save);
+        close=findViewById(R.id.close);
+
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Close clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Patientdetails.this, Login.class);
+                startActivity(intent);
+
+            }
+        });
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                strfirstname=firstname.getText().toString();
+                firstname.setText("");
+                strsecondname=secondname.getText().toString();
+                secondname.setText("");
+                strlastname=lastname.getText().toString();
+                lastname.setText("");
+                strphonenumber=phonenumber.getText().toString();
+                phonenumber.setText("");
+                strage=age.getText().toString();
+                age.setText("");
+                stradmission=dateofAd.getText().toString();
+                dateofAd.setText("");
+                strward=ward.getText().toString();
+                ward.setText("");
+
+                int selectedId = gender.getCheckedRadioButtonId();
+                RadioButton selectedRadioButton = findViewById(selectedId);
+                strgender = selectedRadioButton != null ? selectedRadioButton.getText().toString():"";
+                Toast.makeText(Patientdetails.this, "Patient Registered", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Patientdetails.this, PatientDiagnosis.class);
+                startActivity(intent);
+
+                patient=new Patient(strfirstname,strsecondname,strlastname,strphonenumber,stradmission,strage);
+
+                connectingToFireBase(patient);
+
+
+
+
+            }
+
+
+        });
+
+
+
+    }
+
+    private void connectingToFireBase(Patient patient) {
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue(patient);
+
+    }
+
+
+}
